@@ -15,7 +15,7 @@ public class HomeController {
 
     //@RequestMapping(value = "/user" , method = RequestMethod.GET)
     @RequestMapping("/user")
-    public User gealingWithUser(){
+    public User userMethod(){
         User user = new User();
         user.setId("2");
         user.setName("Simba");
@@ -25,13 +25,16 @@ public class HomeController {
 
     @GetMapping("/{id}/{name}")
     public String pathVariable(@PathVariable String id ,
-                               @PathVariable("name") String fullName){
-        return " The id is : "+id +"  and name is : "+fullName;
+                               @PathVariable("name") String LastName){
+        return " The id is : "+id +"  and name is : "+LastName;
 
     }
     @GetMapping("/requestParam")
 
-    public String requestParam(@RequestParam(required = false,defaultValue = "") String name ,@RequestParam(name = "email") String emailId){
+    public String requestParam(
+            @RequestParam(required = false,defaultValue = "") String name ,
+            @RequestParam(name = "email") String emailId){
         return name +" "+emailId;
     }
 }
+
