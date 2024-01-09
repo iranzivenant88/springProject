@@ -2,7 +2,7 @@ package com.clairevenant.springProject.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties({"department"})
+@JsonIgnoreProperties()
 public class Employee {
     private String employeeId;
     private String firstName;

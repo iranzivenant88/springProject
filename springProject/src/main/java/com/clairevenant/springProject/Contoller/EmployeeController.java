@@ -2,16 +2,17 @@ package com.clairevenant.springProject.Contoller;
 
 import com.clairevenant.springProject.Model.Employee;
 import com.clairevenant.springProject.Service.EmployeeService;
-import com.clairevenant.springProject.Service.EmployeeServiceImplimentation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/employees")
+@RequestMapping("/v1/employees")
 public class EmployeeController {
     @Autowired
+    @Qualifier("employeeServiceImplementation")
     private EmployeeService employeeService;
 
     @PostMapping
